@@ -33,11 +33,17 @@
       };
     </script>
 
+    <style>
+      .isActive {
+        display: none !important;
+      }
+    </style>
+
     <title>Weather APP | JavaProject #1</title>
   </head>
   <body class="bg-fourthcolor relative flex h-screen font-lato overflow-hidden">
     <main
-      class="after:w-[200px] after:h-[200px] after:-z-30 after:block after:bg-[#35A29F]/30 after:absolute after:rounded-full after:bottom-[70%] after:left-[200%] after:scale-[400%] after:blur-3xl flex bg-gradient-to-br from-firstcolor from-5% to-90% shadow-2xl before:w-[200px] before:h-[200px] before:-z-30 before:block before:bg-purple-400/50 before:absolute before:rounded-full before:bottom-[25%] before:scale-[300%] before:blur-3xl to-thirdcolor text-white m-auto relative flex-col p-10 rounded-lg justify-center items-center"
+      class="after:w-[200px] after:h-[200px] after:-z-30 after:block after:bg-[#35A29F]/30 after:absolute after:rounded-full after:bottom-[70%] after:left-[200%] after:scale-[400%] after:blur-3xl flex bg-gradient-to-br from-firstcolor from-5% to-90% shadow-xl shadow-black/20 before:w-[200px] before:h-[200px] before:-z-30 before:block before:bg-purple-400/50 before:absolute before:rounded-full before:bottom-[25%] before:scale-[300%] before:blur-3xl to-thirdcolor text-white m-auto relative flex-col p-10 rounded-lg justify-center items-center"
     >
       <div
         class="search flex gap-5 bg-thirdcolor/70 p-5 rounded-lg after:w-[200px] after:h-[200px] after:-z-30 after:block after:bg-[#35A29F]/30 after:absolute after:rounded-full after:top-[70%] after:right-[200%] after:scale-[400%] after:blur-3xl"
@@ -45,36 +51,45 @@
         <input
           type="text"
           placeholder="Enter Country Name..."
-          id="text"
+          id="cityInput"
           class="placeholder:text-white placeholder:italic placeholder:opacity-60 focus:outline-none bg-transparent"
         />
         <i
           class="bx bx-search self-center scale-[170%] top-[2.5px] relative"
           id="searchIcon"
-          onclick="document.querySelector('#text').focus()"
         ></i>
       </div>
-      <img src="images/clear.png" alt="Clear_image" id="WeatherImage" />
-      <h1 id="number" class="text-6xl font-semibold">7°C</h1>
-      <h2 id="city" class="text-6xl mb-10 -mt-1 tracking-[-0.08rem]">
-        New York
-      </h2>
-      <section class="flex flex-row gap-10">
-        <section class="leftSection flex items-center gap-2.5">
-          <img src="images/humidity.png" alt="humidity" />
-          <div class="card flex flex-col">
-            <h3>48%</h3>
-            <h4>Humadity</h4>
-          </div>
-        </section>
-        <section class="rightSection flex items-center gap-2.5">
-          <img src="images/wind.png" alt="wind" />
-          <div class="card">
-            <h3>10.29 km/h</h3>
-            <h4>Wind Speed</h4>
-          </div>
+      <div class="errorMessage self-start mt-3 text-red-200 isActive">
+        Invalid city name
+      </div>
+      <section
+        id="lowerweaterSection"
+        class="lowerweaterSection isActive transition-all duration-300 flex flex-col items-center"
+      >
+        <img src="images/clear.png" alt="Clear_image" id="WeatherImage" />
+        <h1 id="temp" class="text-6xl font-semibold">7°C</h1>
+        <h2 id="city" class="text-6xl mb-10 -mt-1 tracking-[-0.08rem]">
+          New York
+        </h2>
+        <section class="flex flex-row gap-10">
+          <section class="leftSection flex items-center gap-2.5">
+            <img src="images/humidity.png" alt="humidity" class="w-[40px]" />
+            <div class="card flex flex-col text-[20px]">
+              <h3 id="humadity" class="font-semibold text-lg">48%</h3>
+              <h4>Humadity</h4>
+            </div>
+          </section>
+          <section class="rightSection flex items-center gap-2.5">
+            <img src="images/wind.png" alt="wind" class="w-[40px]" />
+            <div class="card text-[20px]">
+              <h3 id="windSpeed" class="font-semibold text-lg">10.29 km/h</h3>
+              <h4>Wind Speed</h4>
+            </div>
+          </section>
         </section>
       </section>
     </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
