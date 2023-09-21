@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              firstcolor: "#635985",
+              secondcolor: "#443C68",
+              thirdcolor: "#393053",
+              fourthcolor: "#18122B",
+              basecolor: "#A3C7D6",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>Weather APP | JavaProject #1</title>
+  </head>
+  <body class="bg-fourthcolor relative flex h-screen">
+    <main
+      class="flex gap-5 bg-gradient-to-br from-firstcolor from-5% to-90% shadow-2xl shadow-firstcolor/50 before:w-1/4 before:h-1/4 before:bg-firstcolor before:content-none before:absolute to-thirdcolor text-white m-auto relative flex-col p-10 rounded-lg justify-center items-center"
+    >
+      <div class="search flex gap-5 bg-thirdcolor/70 p-5 rounded-lg">
+        <input
+          type="text"
+          placeholder="Enter Country Name..."
+          id="text"
+          class="placeholder:text-white placeholder:italic placeholder:opacity-60 focus:outline-none bg-transparent"
+        />
+        <i
+          class="bx bx-search self-center scale-[170%] top-[2.5px] relative"
+          id="searchIcon"
+          onclick="document.querySelector('#text').focus()"
+        ></i>
+      </div>
+      <img src="images/clear.png" alt="Clear_image" id="WeatherImage" />
+      <h1 id="number" class="text-6xl font-semibold">7°C</h1>
+      <h2 id="city" class="">New York</h2>
+      <section class="flex flex-row gap-10">
+        <section class="leftSection flex">
+          <img src="images/humidity.png" alt="humidity" class="" />
+          <div class="card flex flex-col">
+            <h3>48%</h3>
+            <h4>Humadity</h4>
+          </div>
+        </section>
+        <section class="rightSection">
+          <img src="images/wind.png" alt="wind" />
+          <div class="card">
+            <h3>10.29 km/h</h3>
+            <h4>Wind Speed</h4>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
