@@ -40,5 +40,5 @@ async function getWeather(city) {
 }
 
 searchButton.addEventListener("click", () => {
-  getWeather(searchInput.value);
+  getWeather(searchInput.value.trim());
 });
